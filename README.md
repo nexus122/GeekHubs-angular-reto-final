@@ -1,27 +1,49 @@
-# GeekHubsAngularRetoFinal
+# Geek Hub Proyecto Final
+Este proyecto se basa en consumir la api de [TMDB]() y hacer un listado de peliculas que poder filtrar en Angular.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+## Que hay que hacer
+- El reto consiste en la creación de una App capaz de interactuar con los Endpoints de la Api proporcionada por themoviedb.
 
-## Development server
+## Reto Final
+### Tecnologias
+- HTML
+- ES6
+- Bootstrap
+- Angular
+- API
+- Git
+- Github
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Extra points
+- Api Custom
 
-## Code scaffolding
+## Historias de Usuario / Requisitos
+### Funcionalidad 1
+- [ ] La aplicación nos permitira buscar y mostrar los titulos con los siguientes criterios
+    - [ ] Titulo.
+    - [ ] Titulo Original.
+    - [ ] Overview.
+    - [ ] Listar 10 mas populares.
+    #### Extra Points:
+    - [ ] Genero
+### Funcionalidad 2
+- [ ] La aplicación nos permitirá mostrar información de un titulo.
+    - [ ] Poster.
+    - [ ] Titulo, titulo original.
+    - [ ] Fecha de lanzamiento.
+    - [ ] Overview.
+    ### Extra Points
+    - [ ] Género.
+    - [ ] Número de votos.
+## Funciónes extra:
+- [ ] Ser capaz de hacer un buscador alternativo de series por título dentro de la misma app mostrando los mismos datos.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requisitos de Evaluación
+- Uso correcto de Angular.
+- Endpoints variados de búsqueda.
+- Readme completo en Github.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Por hacer
+- [ ] Hacer una llamada a TMDB.
+- [ ] Dibujar los datos por pantalla.
+- [ ] Poder filtrar esos datos.
