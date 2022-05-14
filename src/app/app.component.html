@@ -1,36 +1,14 @@
 <div>
-  <app-header (propagar)="procesaPropagar($event)"></app-header>
+  <app-header (propagar)="procesaPropagar($event)" (click)="procesaPropagar(pelicula)"></app-header>
   <main class="container">
-    <div class="filmsContainer">
-      <div class="film" *ngFor="let pelicula of peliculas.results">
-        <div class="posterIMG"
-          style="background-image: url(https://image.tmdb.org/t/p/original/{{pelicula.poster_path}})"></div>
-
-        <p class="title">{{pelicula.title}}</p>
-
-      </div>
-    </div>
+    <!-- Componente que gestiona las peliculas -->
+    <app-films (propagar2)="procesaPropagar2($event)" [peliculas]="peliculas"></app-films>
+    <app-film (closeFilmModal)="closeModal($event)" [modalVisible]="modalVisible" [pelicula]="pelicula"></app-film>
   </main>
 </div>
 
 <style>
-  .filmsContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  }
-
-  .film .posterIMG {
-    width: 400px;
-    height: 400px;
-    background-size: cover;
-    cursor: pointer;
-  }
-  .title{
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-  }
-  main{
+  main {
     padding-top: 1em;
   }
 </style>

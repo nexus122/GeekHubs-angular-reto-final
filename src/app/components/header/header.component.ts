@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FilmsService } from '../films.service';
+import { FilmsService } from '../../films.service';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
   // Funcion para buscar peliculas por titulo
   searchFilm() {
-    this.films.getFilm(this.searchTerm).subscribe(film => {
+    this.films.getFilm(this.searchTerm, "title").subscribe(film => {
       this.propagar.emit(film);
     });
   }

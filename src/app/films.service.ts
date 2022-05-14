@@ -22,7 +22,7 @@ export class FilmsService {
     return this.http.get(url);
   }
 
-  getFilm(searchTerm: string) {
+  getFilm(searchTerm: string, searchType: string) {
     // Configuración de la api.
     let apiKey = "2c53d67881f19d681628fcbe5343b8c4";    
 

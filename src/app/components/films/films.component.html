@@ -1,0 +1,31 @@
+<div class="filmsContainer">
+  <div class="film" *ngFor="let pelicula of peliculas.results">
+    <div (click)="procesaPropagar(pelicula)">
+      <div class="posterIMG"
+        style="background-image: url(https://image.tmdb.org/t/p/original/{{pelicula.poster_path}})">
+      </div>
+      <p class="title">{{pelicula.title}}</p>
+    </div>
+  </div>
+</div>
+
+<style scoped>
+  .filmsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1em;
+  }
+
+  .film .posterIMG {
+    min-width: 400px;
+    min-height: 400px;
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
