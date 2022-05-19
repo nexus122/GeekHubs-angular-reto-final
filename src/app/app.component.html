@@ -1,5 +1,5 @@
 <div>
-  <app-header (propagar)="procesaPropagar($event)" (click)="procesaPropagar(pelicula)"></app-header>
+  <app-header (propagar)="procesaPropagar($event)"></app-header>
   <main class="container">
     <!-- Componente que gestiona las peliculas -->
     <app-films (propagar2)="procesaPropagar2($event)" [peliculas]="peliculas"></app-films>

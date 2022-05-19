@@ -21,30 +21,29 @@ export class AppComponent {
       this.peliculas = films;
       this.pelicula = this.peliculas.results[0];
     });
-  }
+  };
   
   procesaPropagar(films:Object){
     this.peliculas = films;
-  }
+  };
 
   procesaPropagar2(film:any){
     console.log("Film: ", film);
     this.pelicula = film;
     this.modalVisible = true;
-  }
+  };
 
   openFilmModal(film:any){
-    console.log("Nos ha llegado el film del hijo: ", film);
     this.pelicula = film;
-  }
+  };
+
   closeModal(cerrar:boolean){
-    console.log("Cerrar modal");
     this.modalVisible = cerrar;
-  }
+  };
 
   ngOnInit() {
     this.searchMovies();    
-  }
+  };
   
 
 }

@@ -13,8 +13,8 @@
                 <span class="item"><i class="fa-solid fa-calendar"></i> <b>{{pelicula.release_date}}</b></span>
             </p>                        
 
-            <h3>Sinopsis</h3>
-            <p>{{pelicula.overview}}</p>
+            <h3 *ngIf="pelicula.overview != '' ">Sinopsis</h3>
+            <p *ngIF="pelicula.overview" class="sinopsis">{{pelicula.overview}}</p>
         </div>
 
     </div>
@@ -78,5 +78,8 @@
     }
     .votes{
         margin-top: 1em;
+    }
+    .sinopsis{
+        max-width: 50%;
     }
 </style>

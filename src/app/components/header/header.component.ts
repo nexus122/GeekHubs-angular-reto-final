@@ -19,6 +19,11 @@ export class HeaderComponent implements OnInit {
 
   // Funcion para buscar peliculas por titulo
   searchFilm() {
+    // Si el titulo de la pelicula esta vacio no hacemos nada.
+    if(this.searchTerm.trim() == ''){
+      return;
+    }
+
     this.films.getFilm(this.searchTerm, "title").subscribe(film => {
       this.propagar.emit(film);
     });
