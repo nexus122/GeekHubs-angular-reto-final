@@ -1,6 +1,8 @@
 <div>
-  <app-header (propagar)="procesaPropagar($event)"></app-header>
+  <app-header (pageChange)="newPage(page)" (propagar)="procesaPropagar($event)"></app-header>
   <main class="container">
+    <!-- app-navigation -->
+    <app-navigation [page]="page"></app-navigation>
     <!-- Componente que gestiona las peliculas -->    
     <app-films (propagar2)="procesaPropagar2($event)" [peliculas]="peliculas"></app-films>
     <!-- Modal que carga la información de la pelicula -->

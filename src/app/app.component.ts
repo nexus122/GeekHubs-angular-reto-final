@@ -13,17 +13,18 @@ export class AppComponent {
   modalVisible: boolean = false;
 
   generos: any = [];
-  generoActivo: string = '';
+  page: number = 1;
+  title: any;
 
   // En el constructor de la clase declaramos que utilizaremos http.
   constructor(private films: FilmsService) {};
 
   searchMovies(){
-    this.films.getFilms().subscribe(films => {
+    this.films.getPopularFilms().subscribe(films => {
       console.log("Data: ", films);
       this.peliculas = films;
       this.pelicula = this.peliculas.results[0];
-      this.genreTable();      
+      this.genreTable();
     });
   };
   
@@ -76,6 +77,9 @@ export class AppComponent {
 
   }
 
+  newPage(page:number){
+    console.log("APP New page: ", page);
+  }
   ngOnInit() {
     this.searchMovies();
     

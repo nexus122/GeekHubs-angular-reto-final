@@ -8,13 +8,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { FilmsComponent } from './components/films/films.component';
 import { FilmComponent } from './components/film/film.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FilmsComponent,
-    FilmComponent
+    FilmComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

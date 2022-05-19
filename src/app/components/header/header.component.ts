@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
       return;
     }
 
-    this.films.getFilm(this.searchTerm, "title").subscribe(film => {
+    this.films.searchedFilms(this.searchTerm, "title").subscribe(film => {
       this.propagar.emit(film);
     });
   }
