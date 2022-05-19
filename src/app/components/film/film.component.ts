@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class FilmComponent implements OnInit {  
 
   @Input() pelicula:any;
-  @Input() modalVisible:boolean | undefined;
+  @Input() modalVisible:boolean | undefined;  
   @Output() closeFilmModal = new EventEmitter();
 
   constructor() { }
@@ -20,6 +20,7 @@ export class FilmComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
 }

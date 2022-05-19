@@ -6,15 +6,25 @@
         </div>
         <div class="info">
             <h1>{{pelicula.title}}</h1>
-            <small id="original_title">{{pelicula.original_title}}</small>
+            <p><small id="original_title">{{pelicula.original_title}}</small></p>
+            <img class="maxWidth" src="https://image.tmdb.org/t/p/original/{{pelicula.backdrop_path}}" alt="">            
             <p class="votes">
-                <span class="item"><i class="fa-solid fa-star"></i> <b>{{pelicula.vote_average}}</b></span>
-                <span class="item"><i class="fa-solid fa-eye"></i> <b>{{pelicula.vote_count}}</b></span>
-                <span class="item"><i class="fa-solid fa-calendar"></i> <b>{{pelicula.release_date}}</b></span>
-            </p>                        
+                <span class="item"><i class="fa-solid fa-star"></i> <b> {{pelicula.vote_average}}</b></span>
+                <span class="item"><i class="fa-solid fa-eye"></i> <b> {{pelicula.vote_count}}</b></span>
+                <span class="item"><i class="fa-solid fa-calendar"></i> <b> {{pelicula.release_date}}</b></span>
+            </p>                   
+            <div class="generos">
+                <p class="item"><b>Generos</b></p>
+                <div *ngFor="let genero of pelicula.generos">
+                    <div class="item">{{genero}}</div>
+                </div>
+            </div>
 
             <h3 *ngIf="pelicula.overview != '' ">Sinopsis</h3>
-            <p *ngIF="pelicula.overview" class="sinopsis">{{pelicula.overview}}</p>
+
+            <p class="maxWidth">{{pelicula.overview}}</p>            
+
+
         </div>
 
     </div>
@@ -57,6 +67,11 @@
         margin-right: 1em;
     }
 
+    .generos{
+        display: flex;
+    }
+
+
     #original_title {
         padding-top: 0;
         margin-top: 5px;
@@ -76,10 +91,12 @@
         cursor: pointer;
         font-size: 2em;
     }
-    .votes{
+
+    .votes {
         margin-top: 1em;
     }
-    .sinopsis{
+
+    .maxWidth {
         max-width: 50%;
     }
 </style>

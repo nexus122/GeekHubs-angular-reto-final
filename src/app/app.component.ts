@@ -12,6 +12,9 @@ export class AppComponent {
   pelicula: any = [];
   modalVisible: boolean = false;
 
+  generos: any = [];
+  generoActivo: string = '';
+
   // En el constructor de la clase declaramos que utilizaremos http.
   constructor(private films: FilmsService) {};
 
@@ -20,12 +23,22 @@ export class AppComponent {
       console.log("Data: ", films);
       this.peliculas = films;
       this.pelicula = this.peliculas.results[0];
+      this.genreTable();      
     });
   };
   
+  /* Tabla con todos los generos de pelicula designados */
+  genreTable(){
+    this.films.getGenreTable().subscribe(generos => {
+      console.log("Data: ", generos);      
+      this.generos = generos;
+      this.modGenresFilsm();
+    });
+  }
+
   procesaPropagar(films:Object){
     this.peliculas = films;
-  };
+  };  
 
   procesaPropagar2(film:any){
     console.log("Film: ", film);
@@ -37,13 +50,37 @@ export class AppComponent {
     this.pelicula = film;
   };
 
+
   closeModal(cerrar:boolean){
     this.modalVisible = cerrar;
   };
 
+  modGenresFilsm(){    
+    // Simplificar los generos
+    console.log("Holaaaa ");
+    this.generos = this.generos.genres;
+    console.log(this.generos);
+
+    // Recorremos los generos y los asignamos a cada pelicula
+    for(let i = 0; i < this.peliculas.results.length; i++){
+      let generos:any = [];
+      for(let j = 0; j < this.peliculas.results[i].genre_ids.length; j++){
+        for(let k = 0; k < this.generos.length; k++){
+          if(this.peliculas.results[i].genre_ids[j] == this.generos[k].id){
+            generos.push(this.generos[k].name);
+          }
+        }
+      }
+      this.peliculas.results[i].generos = generos;
+    }
+
+  }
+
   ngOnInit() {
-    this.searchMovies();    
+    this.searchMovies();
+    
   };
+
   
 
 }

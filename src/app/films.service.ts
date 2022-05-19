@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http'
 })
 
 export class FilmsService {
-  constructor(private http: HttpClient) { } 
+  constructor(private http: HttpClient) { };
   getFilms() {
     // Configuración de la api.
     let apiKey = "2c53d67881f19d681628fcbe5343b8c4";
@@ -28,6 +28,15 @@ export class FilmsService {
 
     // Definimos la URL para hacer las busquedas.
     let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}&language=es-ES`;
+    return this.http.get(url);
+  }
+
+  getGenreTable() {
+    // Configuración de la api.
+    let apiKey = "2c53d67881f19d681628fcbe5343b8c4";
+
+    // Definimos la URL para hacer las busquedas.
+    let url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=es-ES`;
     return this.http.get(url);
   }
 }
