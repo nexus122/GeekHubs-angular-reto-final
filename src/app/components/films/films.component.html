@@ -29,4 +29,35 @@
     text-align: center;
     cursor: pointer;
   }
+  .film {
+    max-width: 100%;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .film {
+      max-width: 100%;
+      display: block;
+    }
+    .film .posterIMG {
+      min-width: 300px;
+      min-height: 200px;
+      background-size: cover;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .film {
+      max-width: 88%;
+      display: block;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .film {
+      max-width: 73%;
+      display: block;
+    }
+  }
 </style>
