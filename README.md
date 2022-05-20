@@ -14,9 +14,6 @@ Este proyecto se basa en consumir la api de [TMDB]() y hacer un listado de pelic
 - Git
 - Github
 
-### Extra points
-- Api Custom
-
 ## Historias de Usuario / Requisitos
 ### Funcionalidad 1
 - [x] La aplicación nos permitira buscar y mostrar los titulos con los siguientes criterios
