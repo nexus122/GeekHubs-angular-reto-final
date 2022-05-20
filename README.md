@@ -1,5 +1,6 @@
 # Geek Hub Proyecto Final
-Este proyecto se basa en consumir la api de [TMDB]() y hacer un listado de peliculas que poder filtrar en Angular.
+Este proyecto se basa en consumir la api de [TMDB]() y hacer un listado de peliculas que poder filtrar en Angular.</br>
+Ver la [demo](https://nexus122.github.io/GeekHubs-angular-reto-final/)
 
 ## Que hay que hacer
 - El reto consiste en la creación de una App capaz de interactuar con los Endpoints de la Api proporcionada por themoviedb.
