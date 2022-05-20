@@ -10,10 +10,10 @@ export class NavigationComponent implements OnInit {
   constructor() { }
   
   @Input() page!: number;
-  @Output () pageChange = new EventEmitter<number>();
+  @Input() maxPage!: number;
+  @Output () pageChange = new EventEmitter<any>();
 
-  changePage(newPage:any){
-    console.log("New page: ", newPage);
+  changePage(newPage:any){        
     this.pageChange.emit(newPage);
   }
 

@@ -13,38 +13,39 @@ export class AppComponent {
   modalVisible: boolean = false;
 
   generos: any = [];
+
   page: number = 1;
-  title: any;
+  maxPage: number = 501;
 
   // En el constructor de la clase declaramos que utilizaremos http.
   constructor(private films: FilmsService) {};
 
   searchMovies(){
     this.films.getPopularFilms().subscribe(films => {
-      console.log("Data: ", films);
+      console.log("Buscamos la pelicula");
       this.peliculas = films;
       this.pelicula = this.peliculas.results[0];
-      this.genreTable();
+      this.genreTable();      
     });
   };
   
   /* Tabla con todos los generos de pelicula designados */
   genreTable(){
-    this.films.getGenreTable().subscribe(generos => {
-      console.log("Data: ", generos);      
+    console.log("Buscamos los generos");
+    this.films.getGenreTable().subscribe(generos => {      
       this.generos = generos;
       this.modGenresFilsm();
     });
   }
 
-  procesaPropagar(films:Object){
+  buscarPelicula(films:Object){
     this.peliculas = films;
   };  
 
-  procesaPropagar2(film:any){
-    console.log("Film: ", film);
+  cerrarModal(film:any){    
     this.pelicula = film;
     this.modalVisible = true;
+    this.modGenresFilsm();
   };
 
   openFilmModal(film:any){
@@ -56,16 +57,19 @@ export class AppComponent {
     this.modalVisible = cerrar;
   };
 
-  modGenresFilsm(){    
+  modGenresFilsm(){
+    console.log("Buscamos los generos para modificarlos en el objeto peliculas")
     // Simplificar los generos
-    console.log("Holaaaa ");
-    this.generos = this.generos.genres;
-    console.log(this.generos);
+
+    console.log("Generos antes: ", this.generos);
+
+    if(this.generos.genres)
+      this.generos = this.generos.genres;
 
     // Recorremos los generos y los asignamos a cada pelicula
     for(let i = 0; i < this.peliculas.results.length; i++){
       let generos:any = [];
-      for(let j = 0; j < this.peliculas.results[i].genre_ids.length; j++){
+      for(let j = 0; j < this.peliculas.results[i].genre_ids.length; j++){        
         for(let k = 0; k < this.generos.length; k++){
           if(this.peliculas.results[i].genre_ids[j] == this.generos[k].id){
             generos.push(this.generos[k].name);
@@ -74,17 +78,23 @@ export class AppComponent {
       }
       this.peliculas.results[i].generos = generos;
     }
+  }
+
+  newPage(newpage:any){
+    if(newpage <= 0) return; // Si el numero es menor, no hacer nada          
+    if(newpage >= this.maxPage) return; // Si el numero es menor, no hacer nada
+
+    this.page = newpage;
+
+    this.films.getPopularFilms(newpage).subscribe(films => {    
+      this.peliculas = films;
+      this.pelicula = this.peliculas.results[0];
+      this.genreTable();
+    });
 
   }
 
-  newPage(page:number){
-    console.log("APP New page: ", page);
-  }
   ngOnInit() {
     this.searchMovies();
-    
   };
-
-  
-
 }

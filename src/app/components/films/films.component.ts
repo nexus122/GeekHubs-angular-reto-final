@@ -8,13 +8,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class FilmsComponent implements OnInit {
 
   @Input() peliculas:any;
-  @Output() propagar2 = new EventEmitter<string>();
+  @Output() cerrarModal = new EventEmitter<string>();
 
   constructor() { };
 
-  procesaPropagar(film:any){
+  buscarPelicula(film:any){
     console.log("Enviamos: ", film);
-    this.propagar2.emit(film);
+    this.cerrarModal.emit(film);
   }
 
   // Que se ejecuta al cargar ?

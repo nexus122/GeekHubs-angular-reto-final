@@ -1,6 +1,6 @@
 <div class="filmsContainer">
   <div class="film" *ngFor="let pelicula of peliculas.results">
-    <div (click)="procesaPropagar(pelicula)">
+    <div (click)="buscarPelicula(pelicula)">
       <div class="posterIMG"
         style="background-image: url(https://image.tmdb.org/t/p/original/{{pelicula.poster_path}})">
       </div>

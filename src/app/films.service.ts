@@ -9,16 +9,15 @@ export class FilmsService {
     
   constructor(private http: HttpClient) {};
 
-  getPopularFilms() { // Este metodo devuelve una lista de peliculas populares.
+  getPopularFilms(apiPage:number = 1) { // Este metodo devuelve una lista de peliculas populares.
     // Configuración de la api.
-    let apiKey = "2c53d67881f19d681628fcbe5343b8c4";
-    let apiPage = 1;
+    let apiKey = "2c53d67881f19d681628fcbe5343b8c4";    
 
     // Metodo de busqueda de peliculas.
     let searchTerm = 'popular' // Empezamos buscando por populares.
 
     // Definimos la URL para hacer las busquedas.
-    let url = `https://api.themoviedb.org/3/movie/${searchTerm}?api_key=${apiKey}&language=es-ES&page=${apiPage}&append_to_response=videos`;
+    let url = `https://api.themoviedb.org/3/movie/${searchTerm}?api_key=${apiKey}&language=es-ES&page=${apiPage}`;
 
     // Hacemos la peticion a la API y devolvemos los datos.
     return this.http.get(url);
@@ -26,10 +25,10 @@ export class FilmsService {
 
   searchedFilms(searchTerm: string, searchType: string) { // Este metodo devuelve una lista de peliculas buscadas.
     // Configuración de la api.
-    let apiKey = "2c53d67881f19d681628fcbe5343b8c4";    
+    let apiKey = "2c53d67881f19d681628fcbe5343b8c4";
 
     // Definimos la URL para hacer las busquedas.
-    let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}&language=es-ES&append_to_response=videos`;
+    let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}&language=es-ES`;
     return this.http.get(url);
   }
 

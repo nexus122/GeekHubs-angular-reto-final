@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   // Mensaje que le enviamos al padre con las nuevas peliculas  
   @Output()
-  propagar = new EventEmitter<Object>();
+  buscarPelicula = new EventEmitter<Object>();
 
   // Variable del hijo que recibira el valor de la busqueda
   searchTerm: string = '';
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     }
 
     this.films.searchedFilms(this.searchTerm, "title").subscribe(film => {
-      this.propagar.emit(film);
+      this.buscarPelicula.emit(film);
     });
   }
 

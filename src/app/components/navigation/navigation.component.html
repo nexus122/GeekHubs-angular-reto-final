@@ -1,11 +1,15 @@
-<div class="navigation">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">            
-            <li class="page-item"><p class="page-link" (click)="changePage(page)">{{page}}</p></li>
-            <li class="page-item"><p class="page-link" (click)="changePage((page+1))">{{page+1}}</p></li>
-            <li class="page-item"><p class="page-link" (click)="changePage((page+2))">{{page+2}}</p></li>            
-        </ul>
-    </nav>
+<div>    
+    <div class="navigation">    
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><p class="page-link" *ngIf="(page-10) > 0" (click)="changePage(page-10)">-10</p></li>
+                <li class="page-item"><p class="page-link" *ngIf="(page-1) > 0" (click)="changePage(page-1)">-1</p></li>
+                <li class="page-item"><p class="page-link" >Pagina: {{page}}</p></li>
+                <li class="page-item"><p class="page-link" (click)="changePage((page+1))">+1</p></li>                                
+                <li class="page-item"><p class="page-link" *ngIf="(page+10) < maxPage" (click)="changePage((page+10))">+10</p></li>
+            </ul>
+        </nav>
+    </div>
 </div>
 
 <style>
@@ -16,5 +20,6 @@
     }
     .page-item{
         cursor: pointer;
+        user-select: none;
     }
 </style>

@@ -1,10 +1,10 @@
 <div>
-  <app-header (pageChange)="newPage(page)" (propagar)="procesaPropagar($event)"></app-header>
+  <app-header (buscarPelicula)="buscarPelicula($event)"></app-header>
   <main class="container">
     <!-- app-navigation -->
-    <app-navigation [page]="page"></app-navigation>
+    <app-navigation (pageChange)="newPage($event)" [maxPage]="maxPage" [page]="page"></app-navigation>
     <!-- Componente que gestiona las peliculas -->    
-    <app-films (propagar2)="procesaPropagar2($event)" [peliculas]="peliculas"></app-films>
+    <app-films (cerrarModal)="cerrarModal($event)" [peliculas]="peliculas"></app-films>
     <!-- Modal que carga la información de la pelicula -->
     <app-film (closeFilmModal)="closeModal($event)" [modalVisible]="modalVisible" [pelicula]="pelicula"></app-film>
   </main>
