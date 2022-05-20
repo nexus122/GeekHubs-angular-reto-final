@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
 
   // Variable del hijo que recibira el valor de la busqueda
   searchTerm: string = '';
+  typeSearch: number = 1;
 
   // Funcion para buscar peliculas por titulo
   searchFilm() {
@@ -24,7 +25,7 @@ export class HeaderComponent implements OnInit {
       return;
     }
 
-    this.films.searchedFilms(this.searchTerm, "title").subscribe(film => {
+    this.films.searchedFilms(this.searchTerm, this.typeSearch).subscribe(film => {      
       this.buscarPelicula.emit(film);
     });
   }

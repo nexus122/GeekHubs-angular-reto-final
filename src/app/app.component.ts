@@ -39,8 +39,9 @@ export class AppComponent {
   }
 
   buscarPelicula(films:Object){
+    console.log("Llega el evento de buscar pelicula: ", films);
     this.peliculas = films;
-  };  
+  };
 
   cerrarModal(film:any){    
     this.pelicula = film;

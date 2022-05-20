@@ -23,12 +23,22 @@ export class FilmsService {
     return this.http.get(url);
   }
 
-  searchedFilms(searchTerm: string, searchType: string) { // Este metodo devuelve una lista de peliculas buscadas.
+  searchedFilms(searchTerm: string, searchType: number) { // Este metodo devuelve una lista de peliculas buscadas.
+
     // Configuración de la api.
     let apiKey = "2c53d67881f19d681628fcbe5343b8c4";
 
+    let type="";
+    
+    if(searchType == 1){
+      type="movie";
+    }else if(searchType == 2){
+      type="tv";
+    }    
+
     // Definimos la URL para hacer las busquedas.
-    let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}&language=es-ES`;
+    let url = `https://api.themoviedb.org/3/search/${type}?api_key=${apiKey}&query=${searchTerm}&language=es-ES`;
+    console.log("Url: ", url);
     return this.http.get(url);
   }
 
