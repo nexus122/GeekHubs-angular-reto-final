@@ -13,7 +13,7 @@
             </ul>
 
             <form class="d-flex">
-                <input [(ngModel)]="searchTerm" name="searchFilm" class="form-control margin" type="search" placeholder="Buscar Peliculas" aria-label="Search">
+                <input [(ngModel)]="searchTerm" name="searchFilm" class="form-control margin" type="search" [placeholder]="typeSearch==1?'Buscar Peliculas':'Buscar Series'" aria-label="Search">
                 <select [(ngModel)]="typeSearch" name="typeSearch" class="form-select margin" aria-label=".form-select-lg example">                    
                     <option selected="selected" value="1">Peliculas</option>
                     <option value="2">Series</option>
