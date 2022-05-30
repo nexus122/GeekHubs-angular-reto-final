@@ -16,10 +16,19 @@
     font-weight: bold;
     text-align: center;
     cursor: pointer;
+    margin-top: -0.8em;
   }
   .film {
     max-width: 100%;
     display: block;
+  }
+
+  .votes {
+    margin-top: 1em;
+    text-align: center;
+  }
+  .votes .item{
+    margin-right: 1em;
   }
 
   @media (max-width: 768px) {

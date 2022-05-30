@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FilmsService } from '../../films.service';
+import { FilmsService } from '../../services/films.service';
 
 @Component({
   selector: 'app-header',
@@ -28,6 +28,15 @@ export class HeaderComponent implements OnInit {
     this.films.searchedFilms(this.searchTerm, this.typeSearch).subscribe(film => {      
       this.buscarPelicula.emit(film);
     });
+  }
+
+  // Funcion para ir a la pagina de inicio
+  goToHome() {
+    
+  }
+
+  goToSeries(){
+
   }
 
   ngOnInit(): void {

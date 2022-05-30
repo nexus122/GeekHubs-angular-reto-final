@@ -4,6 +4,11 @@
       <div class="posterIMG"
         style="background-image: url(https://image.tmdb.org/t/p/original/{{pelicula.poster_path}})">
       </div>
+      <p class="votes">
+        <span class="item"><i class="fa-solid fa-star"></i> <b> {{pelicula.vote_average}}</b></span>
+        <span class="item"><i class="fa-solid fa-eye"></i> <b> {{pelicula.vote_count}}</b></span>
+        <span class="item"><i class="fa-solid fa-calendar"></i> <b> {{pelicula.release_date}}</b></span>
+    </p>   
       <p class="title">{{pelicula.title || pelicula.name}}</p>
     </div>
   </div>

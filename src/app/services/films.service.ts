@@ -18,7 +18,7 @@ export class FilmsService {
 
     // Definimos la URL para hacer las busquedas.
     let url = `https://api.themoviedb.org/3/movie/${searchTerm}?api_key=${apiKey}&language=es-ES&page=${apiPage}`;
-
+    
     // Hacemos la peticion a la API y devolvemos los datos.
     return this.http.get(url);
   }
@@ -38,8 +38,8 @@ export class FilmsService {
 
     // Definimos la URL para hacer las busquedas.
     let url = `https://api.themoviedb.org/3/search/${type}?api_key=${apiKey}&query=${searchTerm}&language=es-ES`;
-    console.log("Url: ", url);
-    return this.http.get(url);
+    let data = this.http.get(url);    
+    return data;
   }
 
   getGenreTable() { // Este metodo devuelve una tabla con todos los generos de peliculas.

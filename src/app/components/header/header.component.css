@@ -1,3 +1,11 @@
 .margin {
     margin-right: 1em;
 }
+
+.nav-link{
+    cursor: pointer;
+}
+
+.nav-link:hover{
+    color: #ffc107!important;
+}

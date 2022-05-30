@@ -2,11 +2,11 @@
     <div class="navigation">    
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-                <li class="page-item"><p class="page-link" *ngIf="(page-10) > 0" (click)="changePage(page-10)">-10</p></li>
-                <li class="page-item"><p class="page-link" *ngIf="(page-1) > 0" (click)="changePage(page-1)">-1</p></li>
+                <li class="page-item"><p class="page-link" *ngIf="(page-10) > 0" (click)="changePage(page-10)"><i class="fa-solid fa-angles-left"></i></p></li>
+                <li class="page-item"><p class="page-link" *ngIf="(page-1) > 0" (click)="changePage(page-1)"><i class="fa-solid fa-chevron-left"></i></p></li>
                 <li class="page-item"><p class="page-link" >Pagina: {{page}}</p></li>
-                <li class="page-item"><p class="page-link" (click)="changePage((page+1))">+1</p></li>                                
-                <li class="page-item"><p class="page-link" *ngIf="(page+10) < maxPage" (click)="changePage((page+10))">+10</p></li>
+                <li class="page-item"><p class="page-link" (click)="changePage((page+1))"><i class="fa-solid fa-angle-right"></i></p></li>                                
+                <li class="page-item"><p class="page-link" *ngIf="(page+10) < maxPage" (click)="changePage((page+10))"><i class="fa-solid fa-angles-right"></i></p></li>
             </ul>
         </nav>
     </div>
